@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>MY CALCULATOR</title>
+        <style>
+            body {
+                background-color: rgb(1, 1, 9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .calculator {
+                background-color: rgb(36, 38, 36);
+                padding: 15px;
+                border-radius: 05%;
+                box-shadow:blue;
+                width: 320px;
+            }
+            .display {
+                width: 100px;
+                height: 80px;
+                background-color: gray;
+                color: rgb(248, 220, 229);
+                font-size: 18px;
+                text-align: right;
+                padding: 15px;
+                border: none;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns:repeat(4, 1fr);
+                gap: 10px;
+            }
+            .buttons button {
+                padding: 20px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                border-color: deeppink;
+                color: darkblue;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            .buttons button:hover {
+                background-color: coral;
+
+            }
+            .buttons.equal {
+                grid-column: span 2;
+                background-color: black;
+                color: rgb(11, 66, 184);
+
+            }
+            .buttons.clear {
+                background-color: darkgrey;
+
+            }
+         </style>
+    </head>
+   <body>
+    <div class = "calculator">
+        <input type="text" id="display" class="display"disabled>
+        <div class="buttons">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('*')">*</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="appendValue('+')">+</button>
+            <button onclick="clearDisply()" class="clear">C</button>
+            <button onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+<script>
+     const display = document.getElementById("display");
+
+    function appendValue(val) {
+        display.value += val;
+    }
+
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch {
+            display.value = "Error";
+        }
+    }
+</script>
+   </body>
+</html>
