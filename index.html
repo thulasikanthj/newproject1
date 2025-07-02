@@ -3,29 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>eCommerce Store</title>
+  <title>GameZone</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>ShopEasy</h1>
-    <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    <h1>🎮 GameZone</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Games</a>
+      <a href="#">Reviews</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="product-container" id="product-list">
-      <!-- Products will be inserted here -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Play the Future</h2>
+      <p>Experience next-gen games right now.</p>
+      <button>Explore Now</button>
     </div>
-  </main>
+  </section>
 
-  <!-- Cart Modal -->
-  <div id="cart-modal" class="modal hidden">
-    <div class="modal-content">
-      <span id="close-modal">&times;</span>
-      <h2>Your Cart</h2>
-      <ul id="cart-items"></ul>
+  <section class="games-section">
+    <h2>🔥 Featured Games</h2>
+    <div class="games-grid" id="game-list">
+      <!-- Game cards inserted by JS -->
     </div>
-  </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GameZone. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
